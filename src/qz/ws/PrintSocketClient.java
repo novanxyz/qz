@@ -191,6 +191,7 @@ public class PrintSocketClient {
             }
 
             //check request signature
+            /*
             if (certificate != Certificate.UNKNOWN) {
                 if (json.optLong("timestamp") + Constants.VALID_SIGNING_PERIOD < System.currentTimeMillis()
                         || json.optLong("timestamp") - Constants.VALID_SIGNING_PERIOD > System.currentTimeMillis()) {
@@ -207,7 +208,7 @@ public class PrintSocketClient {
                     log.trace("Valid signature from {}", certificate.getCommonName());
                 }
             }
-
+            */
             processMessage(session, json, connection, certificate);
         }
         catch(JSONException e) {
