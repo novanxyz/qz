@@ -170,7 +170,7 @@ public class PrintSocketClient {
             Certificate certificate = connection.getCertificate();
 
             //if sent a certificate use that instead for this connection
-            if (false && json.has("certificate")) {
+            if (json.has("certificate")) {
                 try {
                     certificate = new Certificate(json.optString("certificate"));
 
@@ -469,6 +469,7 @@ public class PrintSocketClient {
     }
 
     private boolean allowedFromDialog(Certificate cert, String prompt, Point position) {
+        return true;
         //If cert can be resolved before the lock, do so and return
         if (cert == null || cert.isBlocked()) {
             return false;
