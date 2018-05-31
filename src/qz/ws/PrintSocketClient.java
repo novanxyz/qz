@@ -170,7 +170,7 @@ public class PrintSocketClient {
             Certificate certificate = connection.getCertificate();
 
             //if sent a certificate use that instead for this connection
-            if (json.has("certificate")) {
+            if (false && json.has("certificate")) {
                 try {
                     certificate = new Certificate(json.optString("certificate"));
 
